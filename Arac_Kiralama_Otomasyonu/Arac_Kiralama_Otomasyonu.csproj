@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C33DA8A-6C70-40DB-B08A-16C65789C359}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arac_Kiralama_Otomasyonu</RootNamespace>
+    <AssemblyName>Arac_Kiralama_Otomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AracKategorilerisController.cs" />
+    <Compile Include="Controllers\AraclarsController.cs" />
+    <Compile Include="Controllers\DegerlendirmesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusterilersController.cs" />
+    <Compile Include="Controllers\RezervasyonlarsController.cs" />
+    <Compile Include="Controllers\SubelersController.cs" />
+    <Compile Include="Controllers\YoneticisController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AracKategorileri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Araclar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Degerlendirme.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EkSuruculer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KiralamaDurumu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KiralamaUcretleri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KullaniciRolleri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Musteriler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odemeler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Personel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rezervasyonlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Subeler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yonetici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="arac_resimleri\a-renault-taliant.png" />
+    <Content Include="arac_resimleri\b-fiat-egea-cross.png" />
+    <Content Include="arac_resimleri\c-jeep-avenger.png" />
+    <Content Include="arac_resimleri\d-citroen-c3-aircross.png" />
+    <Content Include="arac_resimleri\d-citroen-c4.png" />
+    <Content Include="arac_resimleri\d-ford-puma.png" />
+    <Content Include="arac_resimleri\d-opel-mokka.png" />
+    <Content Include="arac_resimleri\d-peugeot-2008.png" />
+    <Content Include="arac_resimleri\d-seat-arona.png" />
+    <Content Include="arac_resimleri\d-skoda-kamiq.png" />
+    <Content Include="arac_resimleri\e-bmw-5-serisi.png" />
+    <Content Include="arac_resimleri\e-mercedes-e-serisi.png" />
+    <Content Include="arac_resimleri\e-volvo-s90.png" />
+    <Content Include="arac_resimleri\f-fiat-egea-hb.png" />
+    <Content Include="arac_resimleri\f-hyundai-i20.png" />
+    <Content Include="arac_resimleri\f-renault-clio.png" />
+    <Content Include="arac_resimleri\g-ford-tourneo-connect.png" />
+    <Content Include="arac_resimleri\g-toyota-proace.png" />
+    <Content Include="arac_resimleri\g-volkswagen-caddy.png" />
+    <Content Include="arac_resimleri\h-citroen-elysee.png" />
+    <Content Include="arac_resimleri\h-fiat-egea.png" />
+    <Content Include="arac_resimleri\i-peugeot-408.png" />
+    <Content Include="arac_resimleri\i-peugeot-508.png" />
+    <Content Include="arac_resimleri\i-skoda-superb.png" />
+    <Content Include="arac_resimleri\i-volkswagen-passat-variant.png" />
+    <Content Include="arac_resimleri\j-fiat-ulysse.png" />
+    <Content Include="arac_resimleri\j-ford-tourneo-custom.png" />
+    <Content Include="arac_resimleri\j-hyundai-staria.png" />
+    <Content Include="arac_resimleri\k-peugeot-5008.png" />
+    <Content Include="arac_resimleri\k-skoda-kodiaq.png" />
+    <Content Include="arac_resimleri\l-bmw-3-serisi.png" />
+    <Content Include="arac_resimleri\l-mercedes-c-serisi.png" />
+    <Content Include="arac_resimleri\l-volvo-s60.png" />
+    <Content Include="arac_resimleri\m-ford-tourneo-courier.png" />
+    <Content Include="arac_resimleri\n-ford-kuga.png" />
+    <Content Include="arac_resimleri\n-jeep-renegade.png" />
+    <Content Include="arac_resimleri\n-opel-grandland.png" />
+    <Content Include="arac_resimleri\n-peugeot-3008.png" />
+    <Content Include="arac_resimleri\n-volkswagen-t-roc.png" />
+    <Content Include="arac_resimleri\o-ford-focus-hb.png" />
+    <Content Include="arac_resimleri\o-ford-focus-sw.png" />
+    <Content Include="arac_resimleri\o-ford-focus.png" />
+    <Content Include="arac_resimleri\o-renault-megane.png" />
+    <Content Include="arac_resimleri\o-toyota-corolla.png" />
+    <Content Include="arac_resimleri\p-volvo-xc60.png" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\sablonum.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\builder.js" />
+    <Content Include="Scripts\effects.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\prototype.js" />
+    <Content Include="Scripts\scriptaculous.js" />
+    <Content Include="template\about.html" />
+    <Content Include="template\blog.html" />
+    <Content Include="template\car.html" />
+    <Content Include="template\contact.html" />
+    <Content Include="template\css\bootstrap.css" />
+    <Content Include="template\css\responsive.css" />
+    <Content Include="template\css\style.css" />
+    <Content Include="template\images\about-img.png" />
+    <Content Include="template\images\arkaplan.jpeg" />
+    <Content Include="template\images\b-1.jpg" />
+    <Content Include="template\images\b-2.jpg" />
+    <Content Include="template\images\b-3.jpg" />
+    <Content Include="template\images\book-car.png" />
+    <Content Include="template\images\c-1.png" />
+    <Content Include="template\images\c-2.png" />
+    <Content Include="template\images\c-3.png" />
+    <Content Include="template\images\call.png" />
+    <Content Include="template\images\client-1-white.png" />
+    <Content Include="template\images\client-1.png" />
+    <Content Include="template\images\client-2-white.png" />
+    <Content Include="template\images\client-2.png" />
+    <Content Include="template\images\contact-bg.jpg" />
+    <Content Include="template\images\fb.png" />
+    <Content Include="template\images\hero-img.jpg" />
+    <Content Include="template\images\insta.png" />
+    <Content Include="template\images\left-angle-grey.png" />
+    <Content Include="template\images\left-angle.png" />
+    <Content Include="template\images\linkedin.png" />
+    <Content Include="template\images\location.png" />
+    <Content Include="template\images\mail.png" />
+    <Content Include="template\images\next.png" />
+    <Content Include="template\images\prev.png" />
+    <Content Include="template\images\r-1.png" />
+    <Content Include="template\images\r-2.png" />
+    <Content Include="template\images\r-3.png" />
+    <Content Include="template\images\r-4.png" />
+    <Content Include="template\images\r-5.png" />
+    <Content Include="template\images\r-6.png" />
+    <Content Include="template\images\right-angle-grey.png" />
+    <Content Include="template\images\right-angle.png" />
+    <Content Include="template\images\twitter.png" />
+    <Content Include="template\images\u-1.png" />
+    <Content Include="template\images\u-2.png" />
+    <Content Include="template\images\u-3.png" />
+    <Content Include="template\images\u-4.png" />
+    <Content Include="template\images\us-bg.jpg" />
+    <Content Include="template\index.html" />
+    <Content Include="template\js\bootstrap.js" />
+    <Content Include="template\js\custom.js" />
+    <Content Include="template\js\jquery-3.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Araclars\arac_kaydet.cshtml" />
+    <Content Include="Views\Musterilers\Create.cshtml" />
+    <Content Include="Views\Musterilers\Delete.cshtml" />
+    <Content Include="Views\Musterilers\Details.cshtml" />
+    <Content Include="Views\Musterilers\Edit.cshtml" />
+    <Content Include="Views\Musterilers\Index.cshtml" />
+    <Content Include="Views\Yoneticis\Create.cshtml" />
+    <Content Include="Views\Yoneticis\Delete.cshtml" />
+    <Content Include="Views\Yoneticis\Details.cshtml" />
+    <Content Include="Views\Yoneticis\Edit.cshtml" />
+    <Content Include="Views\Yoneticis\Index.cshtml" />
+    <Content Include="template\css\style.css.map" />
+    <Content Include="template\css\style.scss" />
+    <Content Include="Views\Shared\benim_sablonum.cshtml" />
+    <Content Include="Views\Home\kategori_doldur.cshtml" />
+    <Content Include="Views\Araclars\arac_goster.cshtml" />
+    <Content Include="Views\Shared\arac_gosterme_sablonu.cshtml" />
+    <Content Include="Views\Home\musteri_girisi.cshtml" />
+    <Content Include="Views\AracKategorileris\Create.cshtml" />
+    <Content Include="Views\AracKategorileris\Delete.cshtml" />
+    <Content Include="Views\AracKategorileris\Details.cshtml" />
+    <Content Include="Views\AracKategorileris\Edit.cshtml" />
+    <Content Include="Views\AracKategorileris\Index.cshtml" />
+    <Content Include="Views\Araclars\arac_kategorileri.cshtml" />
+    <Content Include="Views\Rezervasyonlars\Create.cshtml" />
+    <Content Include="Views\Rezervasyonlars\Delete.cshtml" />
+    <Content Include="Views\Rezervasyonlars\Details.cshtml" />
+    <Content Include="Views\Rezervasyonlars\Edit.cshtml" />
+    <Content Include="Views\Rezervasyonlars\Index.cshtml" />
+    <Content Include="Views\Subelers\Create.cshtml" />
+    <Content Include="Views\Subelers\Delete.cshtml" />
+    <Content Include="Views\Subelers\Details.cshtml" />
+    <Content Include="Views\Subelers\Edit.cshtml" />
+    <Content Include="Views\Subelers\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\kategori_getir.cshtml" />
+    <Content Include="Views\Degerlendirmes\Create.cshtml" />
+    <Content Include="Views\Degerlendirmes\Delete.cshtml" />
+    <Content Include="Views\Degerlendirmes\Details.cshtml" />
+    <Content Include="Views\Degerlendirmes\Edit.cshtml" />
+    <Content Include="Views\Degerlendirmes\Index.cshtml" />
+    <Content Include="Views\Shared\Degerlendirme.cshtml" />
+    <Content Include="Views\Home\bize_ulasin.cshtml" />
+    <Content Include="Views\Home\hakkimizda.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59915</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

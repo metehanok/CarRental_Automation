@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>arac_kategorileri</title>
+</head>
+<body>
+    <div>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Araçlar</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @foreach (var kategori in Model)
+                {
+                    <li><a class="dropdown-item" href="@Url.Action("kategori_doldur","Home")">@kategori</a></li>
+                }
+            </ul>
+        </li>
+    </div>
+</body>
+</html>

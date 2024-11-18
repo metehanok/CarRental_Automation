@@ -1,0 +1,15 @@
+﻿
+@model IEnumerable<Arac_Kiralama_Otomasyonu.Models.AracKategorileri>
+
+
+
+ <ul class="list-unstyled">
+    @foreach (var gelen_kat in Model)
+    {
+        <li>
+           <a class="dropdown-item custom-link" href="@Url.Action("arac_goster","Araclars",new { id=gelen_kat.kategori_no})">
+                @gelen_kat.kategori_ad
+            </a>
+        </li>
+    }
+</ul>

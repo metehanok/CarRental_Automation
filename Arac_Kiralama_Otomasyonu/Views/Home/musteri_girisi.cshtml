@@ -1,0 +1,99 @@
+﻿
+@using Arac_Kiralama_Otomasyonu.Models;
+@model Musteriler
+@{
+    Layout = null;
+    string msj = "";
+    if (Session["musterim"] != null)//sessionu burada tutup gerekli anda kullandık,üye girişi başarılı olduğu için hoşgeldiniz yazdırıdk
+    {
+        msj = "Hoşgeldiniz " + ((Musteriler)Session["musterim"]).ad;
+    }
+}
+<b>@msj</b>
+@if (Session["musterim"] == null)
+{
+    // Oturum açılmamışsa "Giriş" bağlantısını göster
+    <a href="@Url.Action("musteri_girisi","Home")">    Giriş</a>
+}
+else
+{
+    // Oturum açılmışsa "Güvenli Çıkış" bağlantısını göster
+    <a href="@Url.Action("guv_cikis","Home")">   Güvenli Çıkış</a>
+}
+@if (Session["musterim"] == null)
+{
+    using (Html.BeginForm("musteri_girisi", "Home")) //login giris action resultını kullandık.
+    {
+        <title>     Giriş Sayfası</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <body>
+            <div class="input-container">
+                <i class="fa fa-envelope icon"></i>
+                @*<input type="email" placeholder="Email" name="email" class="input-field" required>*@
+                @Html.TextBoxFor(model => model.email, null, new { @class = "form-control", placeholder = "         E-mail", required = true })
+            </div>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                @*<input type="password" placeholder="Password" name="password" class="input-field" required>*@
+                @Html.PasswordFor(model => model.sifre, new { @class = "form-control", placeholder = "       Şifre", required = true })
+                <i class="fa fa-eye icon" onclick="togglePassword()"></i>
+            </div>
+            <div><input type="submit" class="bttn" value="GİRİŞ"></div>
+        </body>
+    }
+    <style>
+        body {
+            background-image: url('/template/images/hero-img.jpg'); /* Arka plan görseli */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Arka plan rengi (saydamlık ayarlı) */
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+            .input-container input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            .input-container .icon {
+                position: absolute;
+                top: 12px;
+                left: 10px;
+                color: #888;
+            }
+
+            .input-container .fa-eye {
+                cursor: pointer;
+            }
+
+        .bttn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .bttn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67d3da7a15ee4488ae4d01e3eb72f412" Name="Diagram1">
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.AracKategorileri" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Araclar" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Degerlendirme" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.EkSuruculer" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.KiralamaDurumu" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.KiralamaUcretleri" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.KullaniciRolleri" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Musteriler" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Odemeler" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Personel" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Rezervasyonlar" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Subeler" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arac_Kiralama_ProjesiModel.Yonetici" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_AracKategorileri_Araclar" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Araclar_Degerlendirme" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Araclar_KiralamaDurumu" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Araclar_Rezervasyonlar" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Subeler_Araclar" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Musteriler_Degerlendirme" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Rezervasyonlar_EkSuruculer" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Rezervasyonlar_KiralamaUcretleri" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_KullaniciRolleri_Musteriler" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_KullaniciRolleri_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_KullaniciRolleri_Yonetici" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Musteriler_Rezervasyonlar" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Rezervasyonlar_Odemeler" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Subeler_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="Arac_Kiralama_ProjesiModel.fk_Subeler_Yonetici" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

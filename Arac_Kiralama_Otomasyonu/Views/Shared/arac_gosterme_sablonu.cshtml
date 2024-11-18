@@ -1,0 +1,384 @@
+﻿@model PagedList<Arac_Kiralama_Otomasyonu.Models.Araclar>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    @RenderBody()
+
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/template/css/responsive.css")
+    @Scripts.Render("~/template/css/style.css")
+    @Scripts.Render("~/template/css/style.css.map")
+    @Scripts.Render("~/template/css/style.scss")
+    @Scripts.Render("~/template/js/bootstrap.js")
+    @Scripts.Render("~/template/js/custom.js")
+    @Scripts.Render("~/template/js/jquery-3.4.1.min.js")
+
+    <title>Rent4u</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            AraçKiracım.com
+                        </span>
+                    </a>
+                    <div class="navbar-collapse" id="">
+                        <div class="user_option">
+                            <a href="">
+
+
+                            </a>
+                        </div>
+                        <div class="custom_menu-btn">
+                            <button onclick="openNav()">
+                                <span class="s-1"> </span>
+                                <span class="s-2"> </span>
+                                <span class="s-3"> </span>
+                            </button>
+                        </div>
+                        <div id="myNav" class="overlay">
+                            <div class="overlay-content">
+                                <a href=@Url.Action("Index", "Home")>Anasayfa</a>
+                                <a href="about.html">Hakkımızda</a>
+                                <a href="car.html">Araçlar</a>
+
+                                <a href="contact.html">Bize Ulaşın</a>
+                                <a href="#">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <!-- car section -->
+
+    <section class="car_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Better Way For Find Your Favourite Cars
+                </h2>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable
+                </p>
+            </div>
+            <div class="car_container">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/c-1.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Choose Your Car
+                        </h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when
+                        </p>
+                        <a href="">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/c-2.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Get Your Car
+                        </h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when
+                        </p>
+                        <a href="">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/c-3.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Contact Your Dealer
+                        </h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when
+                        </p>
+                        <a href="">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end car section -->
+    <!-- best section -->
+
+    <section class="best_section">
+        <div class="container">
+            <div class="book_now">
+                <div class="detail-box">
+                    <h2>
+                        Our Best Cars
+                    </h2>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the
+                    </p>
+                </div>
+                <div class="btn-box">
+                    <a href="">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end best section -->
+    <!-- rent section -->
+
+    <section class="rent_section layout_padding" style="background-color:orangered;">
+        <table style="background-color:orangered;">
+            <tr>
+                @{var liste = Model.Take(4); }
+                @foreach (var item in liste)
+                {
+                    <td>
+                        <table class="table-bordered" style="background-color: white; width:300px;">
+                            <tr>
+
+                                <td style="text-align:center;">
+                                    <div class="secici">
+                                        <img src="~/arac_resimleri/@item.resim" style="max-width:100%; max-height:100%;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <strong>Marka:</strong> @Html.DisplayFor(modelItem => item.marka)<br />
+                                    <strong>Model:</strong> @Html.DisplayFor(modelItem => item.model)<br />
+                                    <strong>Yıl:</strong> @Html.DisplayFor(modelItem => item.yil)<br />
+                                    <strong>Yakıt Tipi:</strong> @Html.DisplayFor(modelItem => item.yakit_tipi)<br />
+                                    <strong>Vites Tipi:</strong> @Html.DisplayFor(modelItem => item.vites_tipi)<br />
+                                    <strong>Kilometre:</strong> @Html.DisplayFor(modelItem => item.kilometre)<br />
+                                    <a href="@Url.Action("Create","Rezervasyonlars",new { arac_no = item.marka })" class="btn btn-orange" onclick="setAracAdi('@item.marka')">Rezervasyon</a>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                }
+            </tr>
+            <tr>
+                @{liste = Model.Skip(4); }
+                @foreach (var item in liste)
+                {
+                    <td>
+                        <table class="table-bordered" style="background-color: white; width:300px;">
+                            <tr>
+                                <td style="text-align:center;">
+                                    <div class="secici">
+                                        <img src="~/arac_resimleri/@item.resim" style="max-width:100%; max-height:100%;" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <strong>Marka:</strong> @Html.DisplayFor(modelItem => item.marka)<br />
+                                    <strong>Model:</strong> @Html.DisplayFor(modelItem => item.model)<br />
+                                    <strong>Yıl:</strong> @Html.DisplayFor(modelItem => item.yil)<br />
+                                    <strong>Yakıt Tipi:</strong> @Html.DisplayFor(modelItem => item.yakit_tipi)<br />
+                                    <strong>Vites Tipi:</strong> @Html.DisplayFor(modelItem => item.vites_tipi)<br />
+                                    <strong>Kilometre:</strong> @Html.DisplayFor(modelItem => item.kilometre)<br />
+                                    <a href="@Url.Action("Create","Rezervasyonlars",new { arac_no = item.marka })" class="btn btn-orange" onclick="setAracAdi('@item.marka')">Rezervasyon</a>
+
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                }
+            </tr>
+        </table>
+        <div class="pagination-container">
+            @Html.PagedListPager(Model, sayfa => Url.Action("arac_goster", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+        </div>
+        <style>
+            .btn-orange {
+                color: #fff;
+                background-color: #ff7f0e; /* Turuncu rengi */
+                border-color: #ff7f0e; /* Turuncu rengi */
+            }
+
+            .pagination-container {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .pagination {
+                display: inline-block;
+                padding-left: 0;
+                margin: 20px 0;
+                border-radius: 4px;
+            }
+
+                .pagination > li {
+                    display: inline;
+                }
+
+                    .pagination > li > a,
+                    .pagination > li > span {
+                        position: relative;
+                        float: left;
+                        padding: 6px 12px;
+                        margin-left: -1px;
+                        line-height: 1.42857143;
+                        color: #337ab7;
+                        text-decoration: none;
+                        background-color: #fff;
+                        border: 1px solid #ddd;
+                    }
+
+                    .pagination > li:first-child > a,
+                    .pagination > li:first-child > span {
+                        margin-left: 0;
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px;
+                    }
+
+                    .pagination > li:last-child > a,
+                    .pagination > li:last-child > span {
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+
+                .pagination > .active > a,
+                .pagination > .active > span,
+                .pagination > .active > a:hover,
+                .pagination > .active > span:hover,
+                .pagination > .active > a:focus,
+                .pagination > .active > span:focus {
+                    z-index: 2;
+                    color: #fff;
+                    background-color: #337ab7;
+                    border-color: #337ab7;
+                    cursor: default;
+                }
+
+                .pagination > .disabled > span,
+                .pagination > .disabled > span:hover,
+                .pagination > .disabled > span:focus,
+                .pagination > .disabled > a,
+                .pagination > .disabled > a:hover,
+                .pagination > .disabled > a:focus {
+                    color: #777;
+                    cursor: not-allowed;
+                    background-color: #fff;
+                    border-color: #ddd;
+                }
+
+            .pagination-lg > li > a,
+            .pagination-lg > li > span {
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+            }
+
+            .pagination-sm > li > a,
+            .pagination-sm > li > span {
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+
+            .secici {
+                height: 100%;
+                width: 100%;
+                border-style: solid;
+                border-width: 1px;
+                border-color: lightgray;
+                border-radius: 10px;
+            }
+
+                .secici img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+        </style>
+    </section>
+
+
+    <!-- end rent section -->
+    <!-- footer section -->
+    <footer class="container-fluid footer_section">
+        <p>
+            Copyright &copy; 2020 All Rights Reserved. Design by
+            <a href="https://html.design/">Free Html Templates</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+        </p>
+    </footer>
+    <!-- footer section -->
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="js/custom.js"></script>
+    <script>
+        function setAracAdi(selectedAracAdi) {
+            document.getElementById("aracAdi").value = selectedAracAdi;
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+﻿@model Arac_Kiralama_Otomasyonu.Models.Rezervasyonlar
+
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        <!-- Hata mesajını buraya ekleyin -->
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Rezervasyonlar</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.arac_id, "Araç", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("arac_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.arac_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+   
+   
+
+    <div class="form-group">
+        @Html.Label("musteri_id", "Müşteri Adı", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DropDownList("musteri_id", null, htmlAttributes: new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(model => model.musteri_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("Başlangıç Tarihi", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.baslangic_tarihi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.baslangic_tarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Bitiş Tarihi", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.bitis_tarihi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.bitis_tarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Kaydet" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+        <style>
+            body {
+                background-image: url('/template/images/hero-img.jpg'); /* Arka plan görseli */
+                background-size: cover;
+                background-position: center;
+                font-family: Arial, sans-serif;
+            }
+
+            .login-form {
+                max-width: 300px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.8); /* Arka plan rengi (saydamlık ayarlı) */
+            }
+
+            .input-container {
+                position: relative;
+                margin-bottom: 15px;
+            }
+
+                .input-container input {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                .input-container .icon {
+                    position: absolute;
+                    top: 12px;
+                    left: 10px;
+                    color: #888;
+                }
+
+                .input-container .fa-eye {
+                    cursor: pointer;
+                }
+
+            .bttn {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 3px;
+                background-color: #007bff;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+                .bttn:hover {
+                    background-color: #0056b3;
+                }
+        </style>
+    }
+
+    <div>
+        @Html.ActionLink("Anasayfaya Dön", "Index","Home")
+    </div>
+
+</body>
+</html>

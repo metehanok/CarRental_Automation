@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Arac_Kiralama_Otomasyonu.Models.Rezervasyonlar>
+
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+    <p>
+        @Html.ActionLink("Yeni Rezervasyon", "Create")
+    </p>
+    <table class="table">
+
+        <tr>
+            <th>
+                Başlangıç Tarihi
+            </th>
+            <th>
+                Bitiş Tarihi
+            </th>
+            <th>
+                Marka
+            </th>
+            <th>
+                Ad
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <input type="text" id="baslangicTarihi_@item.rezervasyon_no" name="baslangicTarihi" class="datepicker" value="@item.baslangic_tarihi.ToString("yyyy-MM-dd")" />
+                </td>
+                <td>
+                    <input type="text" id="bitisTarihi_@item.rezervasyon_no" name="bitisTarihi" class="datepicker" value="@item.bitis_tarihi.ToString("yyyy-MM-dd")" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Araclar.marka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Musteriler.ad)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="window.location.href='@Url.Action("Edit", "Rezervasyonlars", new { id = item.rezervasyon_no })'">Edit</button>
+                    <button type="button" class="btn btn-success" onclick="window.location.href='@Url.Action("Details", "Rezervasyonlars", new { id = item.rezervasyon_no })'">Details</button>
+                    <button type="button" class="btn btn-success" onclick="if(confirm('Silmek istediğinize emin misiniz?')) window.location.href='@Url.Action("Delete", "Rezervasyonlars", new { id = item.rezervasyon_no })'">Delete</button>
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <script>
+        $("#dogtar").datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            language: 'tr'
+        });
+    </script>
+    <style>
+        body {
+            background-image: url('/template/images/hero-img.jpg'); /* Arka plan görseli */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Arka plan rengi (saydamlık ayarlı) */
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+            .input-container input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            .input-container .icon {
+                position: absolute;
+                top: 12px;
+                left: 10px;
+                color: #888;
+            }
+
+            .input-container .fa-eye {
+                cursor: pointer;
+            }
+
+        .bttn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .bttn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+    <div>
+        @Html.ActionLink("Anasayfaya Dön", "Index", "Home")
+    </div>
+</body>
+</html>

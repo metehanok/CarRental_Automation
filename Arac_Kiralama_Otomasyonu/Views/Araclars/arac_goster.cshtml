@@ -1,0 +1,80 @@
+﻿@model PagedList<Arac_Kiralama_Otomasyonu.Models.Araclar>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "arac_goster";
+    Layout = "~/Views/Shared/arac_gosterme_sablonu.cshtml";
+}
+
+<style>
+    .secici {
+        height: 150px;
+        width: 150px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: lightgray;
+        border-radius: 10px;
+    }
+
+        .secici img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+</style>
+
+
+@*<table class="table">
+    <tr>
+        @{var liste = Model.Take(4); }
+                }
+                @foreach (var item in liste)
+                {
+                    <td align="center">
+                        <div class="secici"><img src="~/arac_resimleri/@item.resim" height="250" width="250"<br /></div>
+                        Marka:@Html.DisplayFor(modelItem => item.marka)<br />
+                        Model:@Html.DisplayFor(modelItem => item.model)<br />
+
+                        Yıl:@Html.DisplayFor(modelItem => item.yil)<br />
+                        Yakıt Tipi:@Html.DisplayFor(modelItem => item.yakit_tipi)<br />
+                        Vites Tipi:@Html.DisplayFor(modelItem => item.vites_tipi)<br />
+                        Kilometre:@Html.DisplayFor(modelItem => item.kilometre)<br />
+
+
+
+                    </td>
+
+
+                }
+            </tr>
+
+            <tr>
+                @{liste = Model.Take(4); }
+                }
+                @foreach (var item in liste)
+                {
+                    <td align="center">
+                        <div class="secici"><img src="~/arac_resimleri/@item.resim" height="250" width="250"<br /></div>
+                        Marka:@Html.DisplayFor(modelItem => item.marka)
+                        Model:@Html.DisplayFor(modelItem => item.model)
+                        Yıl:@Html.DisplayFor(modelItem => item.yil)
+                        Yakıt Tipi:@Html.DisplayFor(modelItem => item.yakit_tipi)
+                        Vites Tipi:@Html.DisplayFor(modelItem => item.vites_tipi)
+                        Kilometre:@Html.DisplayFor(modelItem => item.kilometre)
+
+
+
+                    </td>
+
+
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.PagedListPager(Model, sayfa => Url.Action("arac_goster", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </td>
+            </tr>
+            }
+
+        </table>*@

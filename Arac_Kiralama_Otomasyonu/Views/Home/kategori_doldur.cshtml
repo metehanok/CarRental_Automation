@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Arac_Kiralama_Otomasyonu.Models.AracKategorileri>
+@{
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menü</title>
+    <!-- CSS Stilleri -->
+    <style>
+        .custom-link {
+            color: #333; /* Link rengi */
+            text-decoration: none; /* Altçizgi kaldır */
+        }
+
+            .custom-link:hover {
+                background-color: #f8f9fa; /* Link üzerine gelindiğinde arka plan rengi */
+            }
+
+        .dropdown-menu {
+            background-image: url('/template/images/hero-img.jpg/');
+            background-size: cover; /* Resmi kapla */
+            border: none; /* Kenarlık yok */
+        }
+    </style>
+</head>
+<body>
+    <!-- Dropdown Menü -->
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="kategoriSecinizButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Kategori Seçiniz
+        </button>
+        <div >
+            <ul class="list-unstyled">
+                @foreach (var gelen_kat in Model)
+                {
+                    <li>
+                        <a class="dropdown-item custom-link" href="@Url.Action("arac_goster", "araclars", new { id = gelen_kat.kategori_no })">
+                            @gelen_kat.kategori_ad
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript Bağlantısı (Bootstrap ve jQuery'nin kullanıldığı varsayılmıştır) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-j2fEPc7+O1t6a40zXmtNUt8F9j64pmssIbG3k5xK1tW5SJ9jqhQgGzDqpXhF5L7h" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+

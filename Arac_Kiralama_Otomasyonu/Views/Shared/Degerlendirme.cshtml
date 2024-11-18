@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değerlendirme Şablonu</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/template/css/responsive.css")
+    @Scripts.Render("~/template/css/style.css")
+    @Scripts.Render("~/template/css/style.css.map")
+    @Scripts.Render("~/template/css/style.scss")
+    @Scripts.Render("~/template/js/bootstrap.js")
+    @Scripts.Render("~/template/js/custom.js")
+    @Scripts.Render("~/template/js/jquery-3.4.1.min.js")
+</head>
+<body>
+    @RenderBody()
+    <section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Request A call back
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="form_container">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputName4" placeholder="Name ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputSubject4" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputMessage" placeholder="Message">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contact_items">
+
+            <a href="">
+                <div class="img-box">
+                    <img src="~/template/images/location.png" alt="">
+                </div>
+                <h6>
+                    Santral Garaj, Kıbrıs Şehitleri Cd. No:64, <br />16200 Osmangazi/Bursa
+                </h6>
+            </a>
+            <a href="">
+                <div class="img-box">
+                    <img src="~/template/images/call.png" alt="">
+                </div>
+                <h6>
+                    (+12 1234456789)
+                </h6>
+            </a>
+            <a href="">
+                <div class="img-box">
+                    <img src="~/template/images/mail.png" alt="">
+                </div>
+                <h6>
+                    arackiracım@gmail.com
+                </h6>
+            </a>
+
+        </div>
+        <div class="social_container">
+            <div class="social-box">
+                <div>
+                    <a href="https://www.facebook.com">
+                        <img src="~/template/images/fb.png" alt="Facebook">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://twitter.com">
+                        <img src="~/template/images/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.linkedin.com">
+                        <img src="~/template/images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com">
+                        <img src="~/template/images/insta.png" alt="Instagram">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@model Arac_Kiralama_Otomasyonu.Models.Degerlendirme
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Degerlendirme</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.puan)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.puan)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.yorum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.yorum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.inceleme_tarihi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.inceleme_tarihi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Araclar.marka)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Araclar.marka)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Musteriler.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Musteriler.ad)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.degerlendirme_no }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

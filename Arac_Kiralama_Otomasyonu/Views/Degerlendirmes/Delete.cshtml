@@ -1,0 +1,72 @@
+﻿@model Arac_Kiralama_Otomasyonu.Models.Degerlendirme
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Degerlendirme</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.puan)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.puan)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.yorum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.yorum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.inceleme_tarihi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.inceleme_tarihi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Araclar.marka)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Araclar.marka)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Musteriler.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Musteriler.ad)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

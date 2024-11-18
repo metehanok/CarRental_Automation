@@ -1,0 +1,58 @@
+﻿@model Arac_Kiralama_Otomasyonu.Models.Rezervasyonlar
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Rezervasyonlar</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.baslangic_tarihi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.baslangic_tarihi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bitis_tarihi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bitis_tarihi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Araclar.marka)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Araclar.marka)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Musteriler.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Musteriler.ad)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.rezervasyon_no }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
